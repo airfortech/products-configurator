@@ -1,7 +1,9 @@
+import { ProductBuilder } from "./views/ProductBuilder/ProductBuilder";
+
 export const App = () => {
   return (
     <div className="App">
-      <p>start</p>
+      <ProductBuilder />
     </div>
   );
 };
