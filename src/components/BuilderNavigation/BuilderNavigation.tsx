@@ -1,13 +1,11 @@
+import { NavItem } from "../../types/NavItem";
+
 interface Props {
-  navItems: {
-    title: string;
-    href: string;
-    isActive: boolean;
-  }[];
+  navItems: NavItem[];
   handleSetActiveNavItem: (titleId: string) => void;
 }
 
-export const ProductsNavigation = ({
+export const BuilderNavigation = ({
   navItems,
   handleSetActiveNavItem,
 }: Props) => {

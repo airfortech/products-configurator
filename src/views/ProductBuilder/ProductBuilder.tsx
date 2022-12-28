@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { ProductsNavigation } from "../../components/ProductsNavigation/ProductsNavigation";
+import { BuilderFooter } from "../../components/BuilderFooter/BuilderFooter";
+import { BuilderNavigation } from "../../components/BuilderNavigation/BuilderNavigation";
+import { NavItem } from "../../types/NavItem";
 
-const defaultNavItems = [
+const defaultNavItems: NavItem[] = [
   {
     title: "Produkt",
     href: "models",
@@ -42,11 +44,15 @@ export const ProductBuilder = () => {
     <div className="cd-product-builder">
       <header className="main-header">
         <h1>Wybierz odpowiedni produkt</h1>
-        <ProductsNavigation
+        <BuilderNavigation
           navItems={navItems}
           handleSetActiveNavItem={handleSetActiveNavItem}
         />
       </header>
+      <BuilderFooter
+        navItems={navItems}
+        handleSetActiveNavItem={handleSetActiveNavItem}
+      />
     </div>
   );
 };

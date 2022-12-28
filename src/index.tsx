@@ -1,8 +1,10 @@
 import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
 import { App } from "./App";
-import "./reset.css";
-import "./index.css";
+import "./styles/reset.css";
+import "./styles/index.css";
+import "./styles/builderNavigation.css";
+import "./styles/builderFooter.css";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
