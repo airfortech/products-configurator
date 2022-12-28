@@ -2,13 +2,22 @@ import { NavItem } from "../../types/NavItem";
 
 interface Props {
   navItems: NavItem[];
+  imageSrc: string | undefined;
+  showAlert: string | undefined;
+  setShowAlert: React.Dispatch<React.SetStateAction<string | undefined>>;
   handleSetActiveNavItem: (titleId: string) => void;
 }
 
 const checkNavStateIndex = (navItems: NavItem[]): number =>
   navItems.findIndex(({ isActive }) => isActive === true);
 
-export const BuilderFooter = ({ navItems, handleSetActiveNavItem }: Props) => {
+export const BuilderFooter = ({
+  navItems,
+  imageSrc,
+  showAlert,
+  setShowAlert,
+  handleSetActiveNavItem,
+}: Props) => {
   const extendedNavItems = [
     ...navItems,
     { title: "Kup teraz", href: "buynow", isActive: false },
@@ -17,10 +26,12 @@ export const BuilderFooter = ({ navItems, handleSetActiveNavItem }: Props) => {
 
   return (
     <footer
-      className={`cd-builder-footer ${navStateIndex === 0 ? " step-1" : ""}`}
+      className={`cd-builder-footer ${navStateIndex === 0 ? "step-1" : ""} ${
+        imageSrc === undefined ? "disabled" : ""
+      } ${showAlert ? "show-alert" : ""}`}
     >
       <div className="selected-product">
-        <img src="../assets/img/tat01.jpg" alt="Product preview" />
+        <img src={`/products-images/${imageSrc}`} alt="Product preview" />
 
         <div className="tot-price">
           <span>Podsumowanie</span>
@@ -42,7 +53,9 @@ export const BuilderFooter = ({ navItems, handleSetActiveNavItem }: Props) => {
                   onClick={() =>
                     navStateIndex === extendedNavItems.length - 2
                       ? {}
-                      : handleSetActiveNavItem(title)
+                      : imageSrc
+                      ? handleSetActiveNavItem(title)
+                      : setShowAlert("Aby kontynuować, wybierz produkt")
                   }
                   key={title}
                 >
@@ -69,7 +82,7 @@ export const BuilderFooter = ({ navItems, handleSetActiveNavItem }: Props) => {
         </ul>
       </nav>
 
-      <span className="alert">Aby kontynuować, wybierz produkt</span>
+      <span className="alert">{showAlert}</span>
     </footer>
   );
 };

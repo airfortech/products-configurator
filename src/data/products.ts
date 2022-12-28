@@ -48,7 +48,7 @@ export const products: Product[] = [
     maxFSize: 29,
     minLSize: 13,
     maxLSize: 35,
-    image: "tat01.jpg",
+    image: "mam01.jpg",
     imageThumb: "tat01-small.jpg",
     colors: [1, 2],
     accessories: [1, 2],
