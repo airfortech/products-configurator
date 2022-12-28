@@ -1,0 +1,56 @@
+import { Product } from "../types/Product";
+
+export const products: Product[] = [
+  {
+    /* unikalne */
+    id: 1,
+    shortName: "Tatalu",
+    fullName: "Wózek spacerowy Tatalu",
+    slogan: "Idealny dla dzieci do 100 cm wzrostu.",
+    description:
+      "TATALU™ – od teraz spacery z Twoim dzieckiem są jeszcze bardziej komfortowe! Nowa odsłona wózka spacerowego, którego lekka i wytrzymała konstrukcja doskonale sprawdzi się w każdych warunkach, a forma parasolki pozwala na szybkie złożenie i przechowywanie go, zajmując niewiele miejsca. Szereg udoskonaleń wpływa na poprawę odczuć zarówno użytkownika, jak i opiekuna. Wózek można w pełni personalizować – to Ty decydujesz o akcesoriach. TATALU™ – to komfort i stabilizacja! Szereg udoskonaleń takich jak tapicerka SOFT osłaniająca boki konstrukcji, zapewniając tym samym ochronę użytkownika, regulowane pasy 5 – punktowe z dodatkową osłoną, zagłówek czy podnóżek z możliwością zmiany pozycji, sprawia, że mały użytkownik czuje się w nim komfortowo i bezpiecznie. Tapicerka SOFT spełnia wysokie wymagania stawiane przez opiekunów, co potwierdza m. in. przeprowadzony test papierosa, świadczący o niepalności tkaniny. Zwiększenie komfortu zapewnia niezależny, wzmocniony system amortyzacji oraz obrotowe koła przednie, które zapewniają zwrotność wózka TATALU™. Przekonaj się, że spacery z Twoją pociechą mogą być jeszcze przyjemniejsze!",
+    price: 2499,
+    minHeight: 100,
+    maxHeight: 120,
+    minASize: 0,
+    maxASize: 34,
+    minCSize: 0,
+    maxCSize: 60,
+    minESize: 0,
+    maxESize: 24,
+    minFSize: 13,
+    maxFSize: 29,
+    minLSize: 13,
+    maxLSize: 35,
+    image: "tat01.jpg",
+    imageThumb: "tat01-small.jpg",
+    colors: [1, 2],
+    accessories: [1, 2],
+  },
+  {
+    /* unikalne */
+    id: 2,
+    shortName: "Mamalu",
+    fullName: "Wózek spacerowy Mamalu",
+    slogan: "Idealny dla dzieci do 130 cm wzrostu.",
+    description:
+      "Nowoczesny, praktyczny o wyjątkowym designie – MAMALU™ to wózek stworzony z myślą o naszych najmłodszych użytkownikach, który doskonale sprawdzi się w każdych warunkach. Konstrukcja opiera się na lekkim oraz wytrzymałym stelażu w formie parasolki, przez co możemy go błyskawicznie złożyć, a przy tym zajmuje on niewiele miejsca podczas transportu. MAMALU™ rośnie wraz z Twoją pociechą! Szeroki zakres personalizacji pozwala m.in. na zamontowanie pasów 5-punktowych i zagłówka na różnych wysokościach, a także na ustawienie podnóżka w 3 różnych pozycjach oraz regulację głębokości siedziska. Prowadzenie wózka to czysta przyjemność. Niezależny system amortyzacji i obrotowe koła przednie sprawiają, że MAMALU™ jest niezwykle zwrotny. Komfort i wygodę zapewnia dwustronna tapicerka COMFORT, która z jednej strony pokryta jest miękkim, przyjaznym dla skóry dziecka materiałem MINKY, zaś z drugiej wodoodporną tapicerką FLEX. Weź MAMALU™ na spacer i przekonaj się, że jest on stworzony dla Ciebie i Twojej pociechy",
+    price: 2499,
+    minHeight: 100,
+    maxHeight: 120,
+    minASize: 0,
+    maxASize: 34,
+    minCSize: 0,
+    maxCSize: 60,
+    minESize: 0,
+    maxESize: 24,
+    minFSize: 13,
+    maxFSize: 29,
+    minLSize: 13,
+    maxLSize: 35,
+    image: "tat01.jpg",
+    imageThumb: "tat01-small.jpg",
+    colors: [1, 2],
+    accessories: [1, 2],
+  },
+];
