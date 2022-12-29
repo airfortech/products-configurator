@@ -45,7 +45,7 @@ export const ProductBuilder = () => {
   const [navItems, setNavItems] = useState<NavItem[]>(defaultNavItems);
   const [filteredProducts, setFilteredProducts] = useState<Product[]>(products);
   const [selectedProduct, setSelectedProduct] = useState<Product | undefined>(
-    filteredProducts[0]
+    undefined
   );
   const [showAlert, setShowAlert] = useState<string | undefined>(undefined);
 
@@ -73,7 +73,12 @@ export const ProductBuilder = () => {
         handleSetActiveNavItem={handleSetActiveNavItem}
         setShowAlert={setShowAlert}
       />
-      <BuilderSections navItems={navItems} selectedProduct={selectedProduct} />
+      <BuilderSections
+        navItems={navItems}
+        products={filteredProducts}
+        selectedProduct={selectedProduct}
+        setSelectedProduct={setSelectedProduct}
+      />
       <BuilderFooter
         navItems={navItems}
         selectedProduct={selectedProduct}
