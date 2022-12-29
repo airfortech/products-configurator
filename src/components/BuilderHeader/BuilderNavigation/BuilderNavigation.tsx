@@ -1,9 +1,9 @@
-import { NavItem } from "../../types/NavItem";
+import { NavItem } from "../../../types/NavItem";
 
 interface Props {
   navItems: NavItem[];
   isDisabled: boolean;
-  handleSetActiveNavItem: (titleId: string) => void;
+  handleSetActiveNavItem: (titleId: string, back?: boolean) => void;
   setShowAlert: React.Dispatch<React.SetStateAction<string | undefined>>;
 }
 

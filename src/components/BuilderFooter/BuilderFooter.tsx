@@ -1,28 +1,30 @@
 import { NavItem } from "../../types/NavItem";
+import { Product } from "../../types/Product";
+import { checkNavStateIndex } from "../../utils/checkNavStateIndex";
 
 interface Props {
   navItems: NavItem[];
-  imageSrc: string | undefined;
+  selectedProduct: Product | undefined;
   showAlert: string | undefined;
   setShowAlert: React.Dispatch<React.SetStateAction<string | undefined>>;
   handleSetActiveNavItem: (titleId: string) => void;
 }
 
-const checkNavStateIndex = (navItems: NavItem[]): number =>
-  navItems.findIndex(({ isActive }) => isActive === true);
-
 export const BuilderFooter = ({
   navItems,
-  imageSrc,
+  selectedProduct,
   showAlert,
   setShowAlert,
   handleSetActiveNavItem,
 }: Props) => {
-  const extendedNavItems = [
+  const extendedNavItems: NavItem[] = [
     ...navItems,
-    { title: "Kup teraz", href: "buynow", isActive: false },
+    { title: "Kup teraz", href: "buynow", isActive: false, back: false },
   ];
   const navStateIndex = checkNavStateIndex(extendedNavItems);
+  const imageSrc = selectedProduct?.colors.find(
+    ({ isSelected }) => isSelected === true
+  )?.image;
 
   return (
     <footer

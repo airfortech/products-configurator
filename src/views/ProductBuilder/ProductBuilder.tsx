@@ -1,30 +1,43 @@
 import { useState } from "react";
 import { BuilderFooter } from "../../components/BuilderFooter/BuilderFooter";
-import { BuilderNavigation } from "../../components/BuilderNavigation/BuilderNavigation";
+import { BuilderHeader } from "../../components/BuilderHeader/BuilderHeader";
+import { BuilderSections } from "../../components/BuilderSections/BuilderSections";
 import { products } from "../../data/products";
 import { NavItem } from "../../types/NavItem";
 import { Product } from "../../types/Product";
+import { Accessories } from "./Accessories/Accessories";
+import { Colors } from "./Colors/Colors";
+import { Models } from "./Models/Models";
+import { Summary } from "./Summary/Summary";
 
 const defaultNavItems: NavItem[] = [
   {
     title: "Produkt",
     href: "models",
+    component: <Models />,
     isActive: true,
+    back: false,
   },
   {
     title: "Kolorystyka",
     href: "colors",
+    component: <Colors />,
     isActive: false,
+    back: false,
   },
   {
     title: "Akcesoria",
     href: "accessories",
+    component: <Accessories />,
     isActive: false,
+    back: false,
   },
   {
     title: "Podsumowanie",
     href: "summary",
+    component: <Summary />,
     isActive: false,
+    back: false,
   },
 ];
 
@@ -36,15 +49,17 @@ export const ProductBuilder = () => {
   );
   const [showAlert, setShowAlert] = useState<string | undefined>(undefined);
 
-  console.log(selectedProduct);
-
   const handleSetActiveNavItem = (titleId: string) => {
+    const prevActiveIndex = navItems.findIndex(
+      ({ isActive }) => isActive === true
+    );
     setNavItems(
-      navItems.map(({ title, href }) => {
+      navItems.map((navItem, index) => {
         return {
-          title,
-          href,
-          isActive: titleId === title ? true : false,
+          ...navItem,
+          isActive: titleId === navItem.title ? true : false,
+          back:
+            titleId === navItem.title && prevActiveIndex > index ? true : false,
         };
       })
     );
@@ -52,21 +67,16 @@ export const ProductBuilder = () => {
 
   return (
     <div className="cd-product-builder">
-      <header className="main-header">
-        <h1>Wybierz odpowiedni produkt</h1>
-        <BuilderNavigation
-          navItems={navItems}
-          isDisabled={!selectedProduct ? true : false}
-          handleSetActiveNavItem={handleSetActiveNavItem}
-          setShowAlert={setShowAlert}
-        />
-      </header>
+      <BuilderHeader
+        navItems={navItems}
+        selectedProduct={selectedProduct}
+        handleSetActiveNavItem={handleSetActiveNavItem}
+        setShowAlert={setShowAlert}
+      />
+      <BuilderSections navItems={navItems} />
       <BuilderFooter
         navItems={navItems}
-        imageSrc={
-          selectedProduct?.colors.find(({ isSelected }) => isSelected === true)
-            ?.image
-        }
+        selectedProduct={selectedProduct}
         showAlert={showAlert}
         setShowAlert={setShowAlert}
         handleSetActiveNavItem={handleSetActiveNavItem}
