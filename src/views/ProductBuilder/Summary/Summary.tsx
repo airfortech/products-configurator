@@ -1,4 +1,6 @@
-export const Summary = () => {
+import { BuilderSectionsProps } from "../../../types/BuilderSectionsProps";
+
+export const Summary = (props: BuilderSectionsProps) => {
   return (
     <section className="cd-step-content">
       <header>

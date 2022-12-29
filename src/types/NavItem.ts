@@ -1,9 +1,9 @@
-import React from "react";
+import { BuilderSectionsProps } from "./BuilderSectionsProps";
 
 export interface NavItem {
   title: string;
   href: string;
-  component?: JSX.Element;
+  component?: (props: BuilderSectionsProps) => JSX.Element;
   isActive: boolean;
   back: boolean;
 }

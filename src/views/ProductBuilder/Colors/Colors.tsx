@@ -1,4 +1,6 @@
-export const Colors = () => {
+import { BuilderSectionsProps } from "../../../types/BuilderSectionsProps";
+
+export const Colors = (props: BuilderSectionsProps) => {
   return (
     <section className="cd-step-content">
       <header>

@@ -14,28 +14,28 @@ const defaultNavItems: NavItem[] = [
   {
     title: "Produkt",
     href: "models",
-    component: <Models />,
+    component: props => <Models {...props} />,
     isActive: true,
     back: false,
   },
   {
     title: "Kolorystyka",
     href: "colors",
-    component: <Colors />,
+    component: props => <Colors {...props} />,
     isActive: false,
     back: false,
   },
   {
     title: "Akcesoria",
     href: "accessories",
-    component: <Accessories />,
+    component: props => <Accessories {...props} />,
     isActive: false,
     back: false,
   },
   {
     title: "Podsumowanie",
     href: "summary",
-    component: <Summary />,
+    component: props => <Summary {...props} />,
     isActive: false,
     back: false,
   },
@@ -73,7 +73,7 @@ export const ProductBuilder = () => {
         handleSetActiveNavItem={handleSetActiveNavItem}
         setShowAlert={setShowAlert}
       />
-      <BuilderSections navItems={navItems} />
+      <BuilderSections navItems={navItems} selectedProduct={selectedProduct} />
       <BuilderFooter
         navItems={navItems}
         selectedProduct={selectedProduct}

@@ -1,4 +1,6 @@
-export const Accessories = () => {
+import { BuilderSectionsProps } from "../../../types/BuilderSectionsProps";
+
+export const Accessories = (props: BuilderSectionsProps) => {
   return (
     <section className="cd-step-content">
       <header>
