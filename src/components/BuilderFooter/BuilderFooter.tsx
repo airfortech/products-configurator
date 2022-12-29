@@ -45,7 +45,7 @@ export const BuilderFooter = ({
         <ul>
           <li className="next nav-item">
             <ul>
-              {extendedNavItems.map(({ title, isActive }, index) => (
+              {extendedNavItems.map(({ title }, index) => (
                 <li
                   className={`${index <= navStateIndex ? "visited " : ""}${
                     index <= navStateIndex + 1 ? "visible" : ""
@@ -66,12 +66,16 @@ export const BuilderFooter = ({
           </li>
           <li className="prev nav-item">
             <ul>
-              {extendedNavItems.map(({ title, isActive }, index) => (
+              {extendedNavItems.map(({ title }, index) => (
                 <li
                   className={`${index <= navStateIndex - 2 ? "visited " : ""}${
                     index <= navStateIndex - 1 ? "visible" : ""
                   }`}
-                  onClick={() => handleSetActiveNavItem(title)}
+                  onClick={() =>
+                    imageSrc
+                      ? handleSetActiveNavItem(title)
+                      : setShowAlert("Aby kontynuować, wybierz produkt")
+                  }
                   key={title}
                 >
                   <a href="#0">{extendedNavItems[index].title}</a>

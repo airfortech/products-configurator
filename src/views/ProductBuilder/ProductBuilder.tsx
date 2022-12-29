@@ -31,10 +31,12 @@ const defaultNavItems: NavItem[] = [
 export const ProductBuilder = () => {
   const [navItems, setNavItems] = useState<NavItem[]>(defaultNavItems);
   const [filteredProducts, setFilteredProducts] = useState<Product[]>(products);
-  const [selectedProduct, setSelectedProduct] = useState<number | undefined>(2);
+  const [selectedProduct, setSelectedProduct] = useState<Product | undefined>(
+    filteredProducts[0]
+  );
   const [showAlert, setShowAlert] = useState<string | undefined>(undefined);
 
-  console.log(filteredProducts.find(item => item.id === 2));
+  console.log(selectedProduct);
 
   const handleSetActiveNavItem = (titleId: string) => {
     setNavItems(
@@ -61,7 +63,10 @@ export const ProductBuilder = () => {
       </header>
       <BuilderFooter
         navItems={navItems}
-        imageSrc={products.find(({ id }) => selectedProduct === id)?.image}
+        imageSrc={
+          selectedProduct?.colors.find(({ isSelected }) => isSelected === true)
+            ?.image
+        }
         showAlert={showAlert}
         setShowAlert={setShowAlert}
         handleSetActiveNavItem={handleSetActiveNavItem}

@@ -22,9 +22,25 @@ export const products: Product[] = [
     maxFSize: 29,
     minLSize: 13,
     maxLSize: 35,
-    image: "tat01.jpg",
-    imageThumb: "tat01-small.jpg",
-    colors: [1, 2],
+    colors: [
+      {
+        /* unikalne */
+        id: 1,
+        name: "Szary",
+        hexColor: "#bbb",
+        image: "tat01.jpg",
+        price: 0,
+        isSelected: true,
+      },
+      {
+        id: 2,
+        name: "Złoty",
+        hexColor: "#e2d300",
+        image: "tat02.jpg",
+        price: 350,
+        isSelected: false,
+      },
+    ],
     accessories: [1, 2],
   },
   {
@@ -48,9 +64,25 @@ export const products: Product[] = [
     maxFSize: 29,
     minLSize: 13,
     maxLSize: 35,
-    image: "mam01.jpg",
-    imageThumb: "tat01-small.jpg",
-    colors: [1, 2],
+    colors: [
+      {
+        /* unikalne */
+        id: 1,
+        name: "Szary",
+        hexColor: "#bbb",
+        image: "mam01.jpg",
+        price: 0,
+        isSelected: true,
+      },
+      {
+        id: 2,
+        name: "Złoty",
+        hexColor: "#e2d300",
+        image: "mam02.jpg",
+        price: 350,
+        isSelected: false,
+      },
+    ],
     accessories: [1, 2],
   },
 ];

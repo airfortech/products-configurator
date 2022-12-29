@@ -21,8 +21,6 @@ export interface Product {
   maxFSize: number;
   minLSize: number;
   maxLSize: number;
-  image: string;
-  imageThumb: string;
-  colors: number[];
+  colors: Color[];
   accessories: number[];
 }

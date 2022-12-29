@@ -2,6 +2,7 @@ export interface Color {
   id: number;
   name: string;
   hexColor: string;
-  isDefault: boolean;
+  image: string;
   price: number;
+  isSelected: boolean;
 }
