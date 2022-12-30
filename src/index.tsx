@@ -9,6 +9,7 @@ import "./styles/builderSections.css";
 import "./styles/builderModels.css";
 import "./styles/builderColors.css";
 import "./styles/builderAccessories.css";
+import "./styles/builderSummary.css";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
