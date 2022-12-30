@@ -53,7 +53,7 @@ export const products: Product[] = [
     slogan: "Idealny dla dzieci do 130 cm wzrostu.",
     description:
       "Nowoczesny, praktyczny o wyjątkowym designie – MAMALU™ to wózek stworzony z myślą o naszych najmłodszych użytkownikach, który doskonale sprawdzi się w każdych warunkach. Konstrukcja opiera się na lekkim oraz wytrzymałym stelażu w formie parasolki, przez co możemy go błyskawicznie złożyć, a przy tym zajmuje on niewiele miejsca podczas transportu. MAMALU™ rośnie wraz z Twoją pociechą! Szeroki zakres personalizacji pozwala m.in. na zamontowanie pasów 5-punktowych i zagłówka na różnych wysokościach, a także na ustawienie podnóżka w 3 różnych pozycjach oraz regulację głębokości siedziska. Prowadzenie wózka to czysta przyjemność. Niezależny system amortyzacji i obrotowe koła przednie sprawiają, że MAMALU™ jest niezwykle zwrotny. Komfort i wygodę zapewnia dwustronna tapicerka COMFORT, która z jednej strony pokryta jest miękkim, przyjaznym dla skóry dziecka materiałem MINKY, zaś z drugiej wodoodporną tapicerką FLEX. Weź MAMALU™ na spacer i przekonaj się, że jest on stworzony dla Ciebie i Twojej pociechy",
-    price: 2499,
+    price: 3549,
     minHeight: 100,
     maxHeight: 120,
     minASize: 0,

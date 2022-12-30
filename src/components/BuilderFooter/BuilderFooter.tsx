@@ -1,6 +1,7 @@
 import { NavItem } from "../../types/NavItem";
 import { Product, SelectedProduct } from "../../types/Product";
 import { checkNavStateIndex } from "../../utils/checkNavStateIndex";
+import { checkPrice } from "../../utils/checkPrice";
 
 interface Props {
   navItems: NavItem[];
@@ -40,7 +41,7 @@ export const BuilderFooter = ({
         <div className="tot-price">
           <span>Podsumowanie</span>
           <span className="total">
-            <b>0</b> zł
+            <b>{selectedProduct ? checkPrice(selectedProduct) : 0}</b> zł
           </span>
         </div>
       </div>
