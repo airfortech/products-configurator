@@ -2,7 +2,7 @@ import { Product } from "../types/Product";
 
 export const products: Product[] = [
   {
-    /* unikalne */
+    /* unique */
     id: 1,
     shortName: "Tatalu",
     fullName: "Wózek spacerowy Tatalu",
@@ -24,7 +24,7 @@ export const products: Product[] = [
     maxLSize: 35,
     colors: [
       {
-        /* unikalne */
+        /* unique */
         id: 1,
         name: "Szary",
         hexColor: "#bbb",
@@ -46,7 +46,6 @@ export const products: Product[] = [
     accessories: [1, 2],
   },
   {
-    /* unikalne */
     id: 2,
     shortName: "Mamalu",
     fullName: "Wózek spacerowy Mamalu",
@@ -68,7 +67,6 @@ export const products: Product[] = [
     maxLSize: 35,
     colors: [
       {
-        /* unikalne */
         id: 1,
         name: "Czerwony",
         hexColor: "#da0202",

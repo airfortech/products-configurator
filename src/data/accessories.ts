@@ -2,7 +2,7 @@ import { Accessory } from "../types/Accessory";
 
 export const accessories: Accessory[] = [
   {
-    /* unikalne */
+    /* unique */
     id: 1,
     name: "Wyprofilowany zagłówek",
     price: 149,

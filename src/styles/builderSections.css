@@ -1,9 +1,6 @@
-/* Styling krokow */
-
 .cd-step-content {
   padding: 1.8em 0 3em;
   opacity: 0;
-  /* animacja */
   animation: cd-center-to-right 0.5s 0s backwards;
 }
 .cd-step-content header {
@@ -14,14 +11,12 @@
   font-size: 2.4rem;
 }
 .cd-step-content .steps-indicator {
-  /* tylko wersja mobilna, steps */
   position: absolute;
   right: 0;
   bottom: 2px;
   color: #5d7c89;
 }
 .cd-step-content .options-list > li {
-  /* lista opcji */
   border: 2px solid #ededed;
   border-radius: 4px;
   margin-bottom: 20px;
@@ -42,7 +37,6 @@
 .cd-step-content .radio::before,
 .cd-step-content .check::after,
 .cd-step-content .check::before {
-  /* ikona zolta */
   position: absolute;
   top: 0;
   left: 0;
@@ -61,7 +55,6 @@
 }
 .cd-step-content .radio::after,
 .cd-step-content .check::after {
-  /* ikona z ptaszkiem */
   background: url(../assets/img/cd-icon-check.svg) no-repeat center center;
 }
 .cd-step-content .radio::before {
@@ -78,17 +71,14 @@
   animation: cd-bounce 0.5s;
 }
 .active .cd-step-content {
-  /* animacja wybranego krokiu */
   opacity: 1;
   transform: translateX(0);
   animation: cd-right-to-center 0.5s 0.2s backwards;
 }
 .move-left .cd-step-content {
-  /* animacja w lewo */
   animation: cd-center-to-left 0.5s 0s backwards;
 }
 .active.back .cd-step-content {
-  /* animacja w dol */
   animation: cd-left-to-center 0.5s 0.2s backwards;
 }
 @media only screen and (min-width: 768px) {

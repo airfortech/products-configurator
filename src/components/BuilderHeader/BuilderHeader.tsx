@@ -1,5 +1,5 @@
 import { NavItem } from "../../types/NavItem";
-import { Product, SelectedProduct } from "../../types/Product";
+import { SelectedProduct } from "../../types/Product";
 import { BuilderNavigation } from "./BuilderNavigation/BuilderNavigation";
 
 interface Props {

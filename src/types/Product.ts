@@ -2,7 +2,6 @@ import { Accessory } from "./Accessory";
 import { Color } from "./Color";
 
 export interface Product {
-  /* unikalne */
   id: number;
   shortName: string;
   fullName: string;

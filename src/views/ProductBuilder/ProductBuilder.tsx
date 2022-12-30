@@ -1,14 +1,14 @@
+import { NavItem } from "../../types/NavItem";
+import { Product, SelectedProduct } from "../../types/Product";
 import { useState } from "react";
 import { BuilderFooter } from "../../components/BuilderFooter/BuilderFooter";
 import { BuilderHeader } from "../../components/BuilderHeader/BuilderHeader";
 import { BuilderSections } from "../../components/BuilderSections/BuilderSections";
-import { products } from "../../data/products";
-import { NavItem } from "../../types/NavItem";
-import { Product, SelectedProduct } from "../../types/Product";
 import { Accessories } from "./Accessories/Accessories";
 import { Colors } from "./Colors/Colors";
 import { Models } from "./Models/Models";
 import { Summary } from "./Summary/Summary";
+import { products } from "../../data/products";
 
 const defaultNavItems: NavItem[] = [
   {
