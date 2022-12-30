@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,700"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/reset.css" />
+    <!-- CSS reset, do resetowania styli HTML i poprawnego wyswietlania -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- zrodlo dla styli -->
+    <script src="js/test.js" defer></script>
+
+    <title>Konfigurator produktów</title>
+  </head>
+  <body>
+    <div class="cd-product-builder">
+      <header class="main-header">
+        <h1>Wybierz odpowiedni produkt</h1>
+
+        <nav class="cd-builder-main-nav disabled">
+          <ul>
+            <li class="active"><a href="#models">Produkt</a></li>
+            <li><a href="#colors">Kolorystyka</a></li>
+            <li><a href="#accessories">Akcesoria</a></li>
+            <li><a href="#summary">Podsumowanie</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <div class="cd-builder-steps">
+        <ul>
+          <li data-selection="models" class="active builder-step">
+            <section class="cd-step-content">
+              <header>
+                <h1>Wybierz produkt</h1>
+                <span class="steps-indicator">Step <b>1</b> of 4</span>
+              </header>
+              <!-- ponizej sa wszystkie 4 produkty -->
+              <ul class="models-list options-list cd-col-2">
+                <li
+                  class="js-option js-radio"
+                  data-price="2499"
+                  data-model="product-01"
+                >
+                  <span class="name">Tatalu</span>
+                  <img src="img/tat01.jpg" alt="wzrost100" />
+                  <span class="price"
+                    >Idealny dla dzieci do 100 cm wzrostu. <br />Dostępny już od
+                    2499 zł</span
+                  >
+                  <div class="radio"></div>
+                </li>
+
+                <li
+                  class="js-option js-radio"
+                  data-price="3549"
+                  data-model="product-02"
+                >
+                  <span class="name">Mamalu</span>
+                  <img src="img/mam01.jpg" alt="wzrost130" />
+                  <span class="price"
+                    >Idealny dla dzieci do 130 cm wzrostu. <br />Dostępny już od
+                    3549 zł</span
+                  >
+                  <div class="radio"></div>
+                </li>
+
+                <li
+                  class="js-option js-radio"
+                  data-price="4499"
+                  data-model="product-03"
+                >
+                  <span class="name">Ulises</span>
+                  <img src="img/ule01.jpg" alt="wzrost150" />
+                  <span class="price"
+                    >Idealny dla dzieci do 150 cm wzrostu. <br />Dostępny już od
+                    4499 zł</span
+                  >
+                  <div class="radio"></div>
+                </li>
+
+                <li
+                  class="js-option js-radio"
+                  data-price="5999"
+                  data-model="product-04"
+                >
+                  <span class="name">Ursus</span>
+                  <img src="img/ursus02.jpg" alt="wzrost180" />
+                  <span class="price"
+                    >Idealny dla dorosłych do 180 cm wzrostu. <br />Dostępny już
+                    od 5999 zł</span
+                  >
+                  <div class="radio"></div>
+                </li>
+              </ul>
+            </section>
+          </li>
+        </ul>
+      </div>
+
+      <footer class="cd-builder-footer disabled step-1">
+        <div class="selected-product">
+          <img src="img/tat01.jpg" alt="Product preview" />
+
+          <div class="tot-price">
+            <span>Podsumowanie</span>
+            <span class="total"><b>0</b> zł</span>
+          </div>
+        </div>
+
+        <nav class="cd-builder-secondary-nav">
+          <ul>
+            <li class="next nav-item">
+              <ul>
+                <li class="visible"><a href="#0">Kolorystyka</a></li>
+                <li><a href="#0">Akcesoria</a></li>
+                <li><a href="#0">Podsumowanie</a></li>
+                <li class="buy"><a href="#0">Kup teraz</a></li>
+              </ul>
+            </li>
+            <li class="prev nav-item">
+              <ul>
+                <li class="visible"><a href="#0">Produkt</a></li>
+                <li><a href="#0">Produkt</a></li>
+                <li><a href="#0">Kolorystyka</a></li>
+                <li><a href="#0">Akcesoria</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+        <span class="alert">Aby kontynuować, wybierz produkt</span>
+      </footer>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script>
+      if (!window.jQuery)
+        document.write('<script src="js/jquery-3.0.0.min.js"><\/script>');
+    </script>
+    <script src="js/main.js"></script>
+    <!-- skrypt jQuery -->
+  </body>
+</html>
