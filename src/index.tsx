@@ -7,6 +7,8 @@ import "./styles/builderNavigation.css";
 import "./styles/builderFooter.css";
 import "./styles/builderSections.css";
 import "./styles/builderModels.css";
+import "./styles/builderColors.css";
+import "./styles/builderAccessories.css";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

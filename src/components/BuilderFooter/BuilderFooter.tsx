@@ -1,10 +1,10 @@
 import { NavItem } from "../../types/NavItem";
-import { Product } from "../../types/Product";
+import { Product, SelectedProduct } from "../../types/Product";
 import { checkNavStateIndex } from "../../utils/checkNavStateIndex";
 
 interface Props {
   navItems: NavItem[];
-  selectedProduct: Product | undefined;
+  selectedProduct: SelectedProduct | undefined;
   showAlert: string | undefined;
   setShowAlert: React.Dispatch<React.SetStateAction<string | undefined>>;
   handleSetActiveNavItem: (titleId: string) => void;
@@ -33,8 +33,10 @@ export const BuilderFooter = ({
       } ${showAlert ? "show-alert" : ""}`}
     >
       <div className="selected-product">
-        <img src={`/products-images/${imageSrc}`} alt="Product preview" />
-
+        <img
+          src={`/products-images/${imageSrc ? imageSrc : "tat01.jpg"}`}
+          alt="Product preview"
+        />
         <div className="tot-price">
           <span>Podsumowanie</span>
           <span className="total">

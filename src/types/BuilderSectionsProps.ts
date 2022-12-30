@@ -1,9 +1,11 @@
 import { NavItem } from "./NavItem";
-import { Product } from "./Product";
+import { Product, SelectedProduct } from "./Product";
 
 export interface BuilderSectionsProps {
   navItems: NavItem[];
-  selectedProduct: Product | undefined;
-  setSelectedProduct: React.Dispatch<React.SetStateAction<Product | undefined>>;
+  selectedProduct: SelectedProduct | undefined;
+  setSelectedProduct: React.Dispatch<
+    React.SetStateAction<SelectedProduct | undefined>
+  >;
   products: Product[];
 }

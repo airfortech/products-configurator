@@ -1,4 +1,7 @@
+import { accessories as definedAccessories } from "../../../data/accessories";
+import { Accessory } from "../../../types/Accessory";
 import { BuilderSectionsProps } from "../../../types/BuilderSectionsProps";
+import { Product } from "../../../types/Product";
 
 interface Props extends Omit<BuilderSectionsProps, "navItems"> {}
 
@@ -9,10 +12,19 @@ export const Models = ({
 }: Props) => {
   const handleSetSelectedProduct = (id: number) => {
     const isProductSelected = id === selectedProduct?.id;
+    const product = products.find(product => id === product.id) as Product;
     setSelectedProduct(
       isProductSelected
         ? undefined
-        : products.find(product => id === product.id)
+        : {
+            ...product,
+            accessories: product.accessories.map(
+              accessory =>
+                definedAccessories.find(
+                  ({ id }) => accessory === id
+                ) as Accessory
+            ),
+          }
     );
   };
 

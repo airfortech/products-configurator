@@ -24,3 +24,7 @@ export interface Product {
   colors: Color[];
   accessories: number[];
 }
+
+export interface SelectedProduct extends Omit<Product, "accessories"> {
+  accessories: Accessory[];
+}

@@ -1,0 +1,51 @@
+/* Akcesoria */
+
+.cd-builder-steps .accessories-list > li {
+  text-align: center;
+  padding: 2em 1.5em;
+  font-weight: bold;
+}
+.cd-builder-steps .accessories-list p {
+  font-size: 1.8rem;
+  line-height: 1.4;
+}
+.cd-builder-steps .accessories-list .price {
+  display: block;
+  margin: 1.2em auto;
+  color: #5d7c89;
+}
+@media only screen and (min-width: 768px) {
+  .cd-builder-steps .accessories-list > li {
+    position: relative;
+    text-align: left;
+    padding: 35px 250px 35px 32px;
+  }
+  .cd-builder-steps .accessories-list p {
+    font-size: 2.2rem;
+  }
+  .cd-builder-steps .accessories-list .check,
+  .cd-builder-steps .accessories-list .price {
+    position: absolute;
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+  }
+  .cd-builder-steps .accessories-list .check {
+    right: 32px;
+  }
+  .cd-builder-steps .accessories-list .price {
+    right: 102px;
+    margin: 0;
+    font-size: 2.2rem;
+    color: #24221f;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .cd-builder-steps .accessories-list > li {
+    padding-right: 300px;
+  }
+  .cd-builder-steps .accessories-list p,
+  .cd-builder-steps .accessories-list .price {
+    font-size: 2.6rem;
+  }
+}

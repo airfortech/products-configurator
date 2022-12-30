@@ -4,7 +4,7 @@ import { BuilderHeader } from "../../components/BuilderHeader/BuilderHeader";
 import { BuilderSections } from "../../components/BuilderSections/BuilderSections";
 import { products } from "../../data/products";
 import { NavItem } from "../../types/NavItem";
-import { Product } from "../../types/Product";
+import { Product, SelectedProduct } from "../../types/Product";
 import { Accessories } from "./Accessories/Accessories";
 import { Colors } from "./Colors/Colors";
 import { Models } from "./Models/Models";
@@ -44,9 +44,9 @@ const defaultNavItems: NavItem[] = [
 export const ProductBuilder = () => {
   const [navItems, setNavItems] = useState<NavItem[]>(defaultNavItems);
   const [filteredProducts, setFilteredProducts] = useState<Product[]>(products);
-  const [selectedProduct, setSelectedProduct] = useState<Product | undefined>(
-    undefined
-  );
+  const [selectedProduct, setSelectedProduct] = useState<
+    SelectedProduct | undefined
+  >(undefined);
   const [showAlert, setShowAlert] = useState<string | undefined>(undefined);
 
   const handleSetActiveNavItem = (titleId: string) => {

@@ -1,0 +1,94 @@
+/* Kolory */
+
+.cd-product-previews {
+  position: relative;
+  margin: 4.5em 0;
+}
+.cd-product-previews img {
+  display: block;
+  width: 100%;
+  max-width: 750px;
+  margin: 0 auto;
+}
+@media only screen and (min-width: 1024px) {
+  .cd-product-previews {
+    margin: 0 0 2em;
+  }
+}
+@media only screen and (min-width: 1480px) and (min-height: 850px) {
+  .cd-product-previews {
+    margin-bottom: 4em;
+  }
+}
+
+.cd-product-customizer {
+  text-align: center;
+}
+.cd-product-customizer li {
+  position: relative;
+  display: inline-block;
+  margin-right: 0.5em;
+}
+.cd-product-customizer li:last-of-type {
+  margin-right: 0;
+}
+.cd-product-customizer li::before,
+.cd-product-customizer li::after {
+  /* chmurka */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(-5px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
+}
+.cd-product-customizer li::before {
+  /* trojkat */
+  content: "";
+  bottom: 100%;
+  height: 0;
+  border: 8px solid transparent;
+  border-top-color: rgba(237, 237, 237, 0.8);
+  border-top-width: 10px;
+  border-top-width: 10px;
+}
+.cd-product-customizer li::after {
+  /* srodek chmurki */
+  content: attr(data-content);
+  background-color: rgba(237, 237, 237, 0.8);
+  white-space: nowrap;
+  padding: 0.7em 1.1em;
+  border-radius: 2em;
+  bottom: calc(100% + 18px);
+}
+.cd-product-customizer li:hover::before,
+.cd-product-customizer li:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%);
+}
+.cd-product-customizer a {
+  display: inline-block;
+  overflow: hidden;
+  text-indent: 100%;
+  color: transparent;
+  white-space: nowrap;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 2px #ededed;
+  transition: box-shadow 0.3s;
+}
+.cd-product-customizer .selected a {
+  box-shadow: 0 0 0 2px #ffb500;
+}
+@media only screen and (min-width: 768px) {
+  .cd-product-customizer li {
+    margin-right: 1em;
+  }
+  .cd-product-customizer a {
+    height: 50px;
+    width: 50px;
+  }
+}

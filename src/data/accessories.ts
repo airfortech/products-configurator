@@ -6,10 +6,12 @@ export const accessories: Accessory[] = [
     id: 1,
     name: "Wyprofilowany zagłówek",
     price: 149,
+    isSelected: false,
   },
   {
     id: 2,
     name: "Peloty piersiowe zawężające oparcie o 10 cm",
     price: 200,
+    isSelected: false,
   },
 ];

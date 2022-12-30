@@ -1,10 +1,10 @@
 import { NavItem } from "../../types/NavItem";
-import { Product } from "../../types/Product";
+import { Product, SelectedProduct } from "../../types/Product";
 import { BuilderNavigation } from "./BuilderNavigation/BuilderNavigation";
 
 interface Props {
   navItems: NavItem[];
-  selectedProduct: Product | undefined;
+  selectedProduct: SelectedProduct | undefined;
   handleSetActiveNavItem: (titleId: string, back?: boolean) => void;
   setShowAlert: React.Dispatch<React.SetStateAction<string | undefined>>;
 }

@@ -29,7 +29,9 @@ export const products: Product[] = [
         name: "Szary",
         hexColor: "#bbb",
         image: "tat01.jpg",
+        /* price 0 means "in standard" */
         price: 0,
+        /* true if color is default, only one should be true */
         isSelected: true,
       },
       {
@@ -68,17 +70,25 @@ export const products: Product[] = [
       {
         /* unikalne */
         id: 1,
-        name: "Szary",
-        hexColor: "#bbb",
+        name: "Czerwony",
+        hexColor: "#da0202",
         image: "mam01.jpg",
         price: 0,
         isSelected: true,
       },
       {
         id: 2,
-        name: "Złoty",
-        hexColor: "#e2d300",
+        name: "Różowy",
+        hexColor: "#b4005a",
         image: "mam02.jpg",
+        price: 350,
+        isSelected: false,
+      },
+      {
+        id: 3,
+        name: "Ciemnoniebieski",
+        hexColor: "#000f97",
+        image: "mam03.jpg",
         price: 350,
         isSelected: false,
       },
