@@ -43,7 +43,7 @@ export const Colors = ({ selectedProduct, setSelectedProduct }: Props) => {
               data-content={option}
               onClick={() => handleChangeProductColor(id)}
             >
-              <p style={{ backgroundColor: hexColor }}>{option}</p>
+              <button style={{ backgroundColor: hexColor }}>{option}</button>
             </li>
           );
         })}

@@ -35,9 +35,7 @@ export const Accessories = ({ selectedProduct, setSelectedProduct }: Props) => {
             onClick={() => handleChangeAccesorySelection(id)}
           >
             <p>{name}</p>
-
             <span className="price">{price} zł</span>
-
             <div className="check"></div>
           </li>
         ))}
