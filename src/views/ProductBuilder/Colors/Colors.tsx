@@ -32,7 +32,7 @@ export const Colors = ({ selectedProduct, setSelectedProduct }: Props) => {
         />
       </div>
       <ul className="cd-product-customizer">
-        {colors.map(({ id, name, hexColor, image, isSelected, price }) => {
+        {colors.map(({ id, name, hexColor, isSelected, price }) => {
           const option = `${name} - ${
             price === 0 ? "w standardzie" : price + " zł"
           }`;
@@ -43,9 +43,7 @@ export const Colors = ({ selectedProduct, setSelectedProduct }: Props) => {
               data-content={option}
               onClick={() => handleChangeProductColor(id)}
             >
-              <a style={{ backgroundColor: hexColor }} href="#0">
-                {option}
-              </a>
+              <p style={{ backgroundColor: hexColor }}>{option}</p>
             </li>
           );
         })}

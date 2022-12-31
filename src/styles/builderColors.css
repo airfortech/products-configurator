@@ -65,7 +65,7 @@
   visibility: visible;
   transform: translateX(-50%);
 }
-.cd-product-customizer a {
+.cd-product-customizer p {
   display: inline-block;
   overflow: hidden;
   text-indent: 100%;
@@ -77,15 +77,16 @@
   border: 2px solid #ffffff;
   box-shadow: 0 0 0 2px #ededed;
   transition: box-shadow 0.3s;
+  cursor: pointer;
 }
-.cd-product-customizer .selected a {
+.cd-product-customizer .selected p {
   box-shadow: 0 0 0 2px #ffb500;
 }
 @media only screen and (min-width: 768px) {
   .cd-product-customizer li {
     margin-right: 1em;
   }
-  .cd-product-customizer a {
+  .cd-product-customizer p {
     height: 50px;
     width: 50px;
   }

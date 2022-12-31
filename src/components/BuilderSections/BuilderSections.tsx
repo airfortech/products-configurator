@@ -4,6 +4,7 @@ import { checkNavStateIndex } from "../../utils/checkNavStateIndex";
 export const BuilderSections = (props: BuilderSectionsProps) => {
   const { navItems } = props;
   const navStateIndex = checkNavStateIndex(navItems);
+
   return (
     <div className="cd-builder-steps">
       <ul>

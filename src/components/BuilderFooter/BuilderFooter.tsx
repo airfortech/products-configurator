@@ -45,12 +45,11 @@ export const BuilderFooter = ({
           </span>
         </div>
       </div>
-
       <nav className="cd-builder-secondary-nav">
         <ul>
           <li className="next nav-item">
             <ul>
-              {extendedNavItems.map(({ title }, index) => (
+              {extendedNavItems.map(({ title, href }, index) => (
                 <li
                   className={`${index <= navStateIndex ? "visited " : ""}${
                     index <= navStateIndex + 1 ? "visible" : ""
@@ -64,14 +63,14 @@ export const BuilderFooter = ({
                   }
                   key={title}
                 >
-                  <a href="#0">{extendedNavItems[index].title}</a>
+                  <a href={`#${href}`}>{extendedNavItems[index].title}</a>
                 </li>
               ))}
             </ul>
           </li>
           <li className="prev nav-item">
             <ul>
-              {extendedNavItems.map(({ title }, index) => (
+              {extendedNavItems.map(({ title, href }, index) => (
                 <li
                   className={`${index <= navStateIndex - 2 ? "visited " : ""}${
                     index <= navStateIndex - 1 ? "visible" : ""
@@ -83,14 +82,13 @@ export const BuilderFooter = ({
                   }
                   key={title}
                 >
-                  <a href="#0">{extendedNavItems[index].title}</a>
+                  <a href={`#${href}`}>{extendedNavItems[index].title}</a>
                 </li>
               ))}
             </ul>
           </li>
         </ul>
       </nav>
-
       <span className="alert">{showAlert}</span>
     </footer>
   );
