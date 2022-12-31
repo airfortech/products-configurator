@@ -3,6 +3,7 @@ import reportWebVitals from "./reportWebVitals";
 import { App } from "./App";
 import "./styles/reset.css";
 import "./styles/index.css";
+import "./styles/animations.css";
 import "./styles/builderNavigation.css";
 import "./styles/builderFooter.css";
 import "./styles/builderSections.css";
