@@ -8,8 +8,8 @@ export interface Product {
   slogan: string;
   description: string;
   price: number;
-  minHeight: number;
-  maxHeight: number;
+  minWSize: number;
+  maxWSize: number;
   minASize: number;
   maxASize: number;
   minCSize: number;

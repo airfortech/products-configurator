@@ -4,7 +4,7 @@ import { Color } from "../../../types/Color";
 interface Props
   extends Omit<
     BuilderSectionsProps,
-    "navItems" | "products" | "setSelectedProduct"
+    "navItems" | "products" | "setProducts" | "setSelectedProduct"
   > {}
 
 export const Summary = ({ selectedProduct }: Props) => {

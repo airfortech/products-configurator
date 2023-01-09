@@ -1,12 +1,14 @@
+import { Product } from "../../../types/Product";
+import { BuilderFilters } from "../../../components/BuilderFilters/BuilderFilters";
 import { accessories as definedAccessories } from "../../../data/accessories";
 import { Accessory } from "../../../types/Accessory";
 import { BuilderSectionsProps } from "../../../types/BuilderSectionsProps";
-import { Product } from "../../../types/Product";
 
 interface Props extends Omit<BuilderSectionsProps, "navItems"> {}
 
-export const Models = ({
+export const Products = ({
   products,
+  setProducts,
   selectedProduct,
   setSelectedProduct,
 }: Props) => {
@@ -36,6 +38,12 @@ export const Models = ({
           Step <b>1</b> of 4
         </span>
       </header>
+      <BuilderFilters setProducts={setProducts} />
+      {products.length <= 0 && (
+        <p className="no-results">
+          Brak produktów spełniających powyższe kryteria.
+        </p>
+      )}
       <ul className="models-list options-list cd-col-2">
         {products.map(({ id, shortName, slogan, price, colors }) => {
           const imageSrc = colors.find(

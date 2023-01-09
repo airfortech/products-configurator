@@ -8,4 +8,5 @@ export interface BuilderSectionsProps {
     React.SetStateAction<SelectedProduct | undefined>
   >;
   products: Product[];
+  setProducts: React.Dispatch<React.SetStateAction<Product[]>>;
 }

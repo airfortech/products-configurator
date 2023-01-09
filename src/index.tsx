@@ -7,7 +7,7 @@ import "./styles/animations.css";
 import "./styles/builderNavigation.css";
 import "./styles/builderFooter.css";
 import "./styles/builderSections.css";
-import "./styles/builderModels.css";
+import "./styles/builderProducts.css";
 import "./styles/builderColors.css";
 import "./styles/builderAccessories.css";
 import "./styles/builderSummary.css";

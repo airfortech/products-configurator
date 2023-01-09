@@ -1,0 +1,149 @@
+.cd-builder-steps .models-list {
+  text-align: center;
+}
+.cd-builder-steps .models-list > li {
+  padding: 2.7em 0;
+}
+.cd-builder-steps .models-list .name {
+  display: block;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-top: 0.2em;
+}
+.cd-builder-steps .models-list img {
+  display: block;
+  max-width: 80%;
+  margin: 1.8em auto 2.2em;
+}
+.cd-builder-steps .models-list .price {
+  display: block;
+  color: #5d7c89;
+  margin-bottom: 1em;
+}
+.cd-builder-steps .models-list .selected .radio::before {
+  /* loader */
+  background: transparent;
+  border-color: #ededed;
+  border-right-color: #ffb500;
+  transform: scale(1);
+  animation: cd-load 0.6s infinite;
+}
+.cd-builder-steps .models-list .selected.loaded .radio::before {
+  background: #ffb500;
+  border-color: #ffb500;
+  transform: scale(1.5);
+  animation: cd-bounce 0.5s;
+}
+
+.cd-builder-steps .no-results {
+  margin-bottom: 900px;
+  font-size: 2.9rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.cd-builder-filters {
+  margin: 0 auto 9rem auto;
+  max-width: 1050px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cd-builder-filters h2 {
+  font-size: 3.2rem;
+  margin: 1rem auto 0.76em;
+  font-weight: bold;
+}
+
+.cd-builder-filters p {
+  font-weight: 400;
+  line-height: 27px;
+  text-align: center;
+  color: #5d7c89;
+}
+
+.cd-builder-filters > div {
+  margin-top: 4rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.cd-builder-filters img {
+  max-width: 448px;
+  width: 100%;
+}
+
+.cd-builder-filters form {
+  max-width: 40%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cd-builder-filters legend {
+  text-transform: uppercase;
+  font-size: 22px;
+  line-height: 29px;
+  font-weight: 600;
+}
+
+.cd-builder-filters .input {
+  position: relative;
+  min-width: 180px;
+}
+
+.cd-builder-filters input {
+  padding: 0 60px 0 20px;
+  width: 100%;
+  height: 45px;
+  color: #ededed;
+  background-color: #aebdc4;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  font-size: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.cd-builder-filters input:hover {
+  background-color: rgb(196, 207, 212);
+}
+
+.cd-builder-filters .input p {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color: #ededed;
+  font-size: 20px;
+}
+
+.cd-builder-filters input::placeholder {
+  color: inherit;
+}
+
+.cd-builder-filters input.filled {
+  background-color: #ffb500;
+}
+
+@media only screen and (max-width: 767px) {
+  .cd-builder-filters > div {
+    flex-direction: column;
+  }
+
+  .cd-builder-filters form {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}

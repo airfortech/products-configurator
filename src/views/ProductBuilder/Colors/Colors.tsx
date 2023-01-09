@@ -1,6 +1,7 @@
 import { BuilderSectionsProps } from "../../../types/BuilderSectionsProps";
 
-interface Props extends Omit<BuilderSectionsProps, "navItems" | "products"> {}
+interface Props
+  extends Omit<BuilderSectionsProps, "navItems" | "products" | "setProducts"> {}
 
 export const Colors = ({ selectedProduct, setSelectedProduct }: Props) => {
   if (!selectedProduct) return null;

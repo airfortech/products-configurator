@@ -6,7 +6,7 @@ import { BuilderHeader } from "../../components/BuilderHeader/BuilderHeader";
 import { BuilderSections } from "../../components/BuilderSections/BuilderSections";
 import { Accessories } from "./Accessories/Accessories";
 import { Colors } from "./Colors/Colors";
-import { Models } from "./Models/Models";
+import { Products } from "./Products/Products";
 import { Summary } from "./Summary/Summary";
 import { products } from "../../data/products";
 
@@ -14,7 +14,7 @@ const defaultNavItems: NavItem[] = [
   {
     title: "Produkt",
     href: "models",
-    component: props => <Models {...props} />,
+    component: props => <Products {...props} />,
     isActive: true,
     back: false,
   },
@@ -76,6 +76,7 @@ export const ProductBuilder = () => {
       <BuilderSections
         navItems={navItems}
         products={filteredProducts}
+        setProducts={setFilteredProducts}
         selectedProduct={selectedProduct}
         setSelectedProduct={setSelectedProduct}
       />
