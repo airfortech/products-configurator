@@ -1,9 +1,9 @@
+import { Product, ProductSize, ProductSizeUnit } from "../../../types/Product";
 import { useState } from "react";
-import { Product } from "../../../types/Product";
 import { products } from "../../../data/products";
 
 interface Props {
-  name: string;
+  name: ProductSizeUnit;
   value: number;
   placeholder: string;
   unit: string;
@@ -27,8 +27,8 @@ export const BuilderFiltersInput = ({
       products.filter(product => {
         if (value <= 0) return true;
         return (
-          product[("min" + name) as keyof Product] <= value &&
-          product[("max" + name) as keyof Product] >= value
+          product[("min" + name) as ProductSize] <= value &&
+          product[("max" + name) as ProductSize] >= value
         );
       })
     );

@@ -1,25 +1,27 @@
 import { Accessory } from "./Accessory";
 import { Color } from "./Color";
 
-export interface Product {
+export type ProductSizeUnit =
+  | "WSize"
+  | "ASize"
+  | "CSize"
+  | "ESize"
+  | "FSize"
+  | "LSize";
+export type ProductSizeType = "min" | "max";
+export type ProductSize = `${ProductSizeType}${ProductSizeUnit}`;
+
+type T = {
+  [key in ProductSize]: number;
+};
+
+export interface Product extends T {
   id: number;
   shortName: string;
   fullName: string;
   slogan: string;
   description: string;
   price: number;
-  minWSize: number;
-  maxWSize: number;
-  minASize: number;
-  maxASize: number;
-  minCSize: number;
-  maxCSize: number;
-  minESize: number;
-  maxESize: number;
-  minFSize: number;
-  maxFSize: number;
-  minLSize: number;
-  maxLSize: number;
   colors: Color[];
   accessories: number[];
 }
