@@ -1,9 +1,10 @@
 import { NavItem } from "../../types/NavItem";
 import { SelectedProduct } from "../../types/Product";
 import { pdf } from "@react-pdf/renderer";
+import { PdfDocument } from "../PdfDocument/PdfDocument";
 import { checkNavStateIndex } from "../../utils/checkNavStateIndex";
 import { checkPrice } from "../../utils/checkPrice";
-import { PdfDocument } from "../PdfDocument/PdfDocument";
+import { convertToCurrency } from "../../utils/convertToCurrency";
 
 interface Props {
   navItems: NavItem[];
@@ -56,7 +57,11 @@ export const BuilderFooter = ({
         <div className="tot-price">
           <span>Podsumowanie</span>
           <span className="total">
-            <b>{selectedProduct ? checkPrice(selectedProduct) : 0}</b> zł
+            <b>
+              {selectedProduct
+                ? convertToCurrency(checkPrice(selectedProduct))
+                : "0 zł"}
+            </b>
           </span>
         </div>
       </div>
