@@ -1,7 +1,9 @@
 import { NavItem } from "../../types/NavItem";
 import { SelectedProduct } from "../../types/Product";
+import { pdf } from "@react-pdf/renderer";
 import { checkNavStateIndex } from "../../utils/checkNavStateIndex";
 import { checkPrice } from "../../utils/checkPrice";
+import { PdfDocument } from "../PdfDocument/PdfDocument";
 
 interface Props {
   navItems: NavItem[];
@@ -20,12 +22,25 @@ export const BuilderFooter = ({
 }: Props) => {
   const extendedNavItems: NavItem[] = [
     ...navItems,
-    { title: "Kup teraz", href: "buynow", isActive: false, back: false },
+    {
+      title: "Zamów",
+      href: "buynow",
+      isActive: false,
+      back: false,
+    },
   ];
   const navStateIndex = checkNavStateIndex(extendedNavItems);
   const imageSrc = selectedProduct?.colors.find(
     ({ isSelected }) => isSelected === true
   )?.image;
+
+  const handleBuyNow = async () => {
+    const blob = await pdf(
+      <PdfDocument selectedProduct={selectedProduct} />
+    ).toBlob();
+    const url = URL.createObjectURL(blob);
+    window.open(url, "_blank", "noreferrer");
+  };
 
   return (
     <footer
@@ -56,7 +71,7 @@ export const BuilderFooter = ({
                   }`}
                   onClick={() =>
                     navStateIndex === extendedNavItems.length - 2
-                      ? {}
+                      ? handleBuyNow()
                       : imageSrc
                       ? handleSetActiveNavItem(title)
                       : setShowAlert("Aby kontynuować, wybierz produkt")

@@ -21,9 +21,6 @@ export const Colors = ({ selectedProduct, setSelectedProduct }: Props) => {
     <section className="cd-step-content">
       <header>
         <h1>Wybierz kolor</h1>
-        <span className="steps-indicator">
-          Step <b>2</b> of 4
-        </span>
       </header>
       <div className="cd-product-previews">
         <img

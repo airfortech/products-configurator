@@ -21,9 +21,6 @@ export const Summary = ({ selectedProduct }: Props) => {
     <section className="cd-step-content">
       <header>
         <h1>Podsumowanie</h1>
-        <span className="steps-indicator">
-          Step <b>4</b> of 4
-        </span>
       </header>
       <ul className="summary-list">
         <li>

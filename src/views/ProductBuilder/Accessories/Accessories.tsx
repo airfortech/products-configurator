@@ -23,9 +23,6 @@ export const Accessories = ({ selectedProduct, setSelectedProduct }: Props) => {
     <section className="cd-step-content">
       <header>
         <h1>Wybrane przez Ciebie akcesoria</h1>
-        <span className="steps-indicator">
-          Step <b>3</b> of 4
-        </span>
       </header>
       <ul className="accessories-list options-list">
         {selectedProduct?.accessories.map(({ id, isSelected, name, price }) => (
