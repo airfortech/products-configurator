@@ -93,6 +93,7 @@ interface Props {
   selectedProduct: SelectedProduct | undefined;
 }
 
+// komponent renderujacy wyglad pdfa na podsawie libki
 export const PdfDocument = ({ selectedProduct }: Props) => {
   if (!selectedProduct) return null;
   const { fullName, colors, price, accessories } = selectedProduct;

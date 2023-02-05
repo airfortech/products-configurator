@@ -2,7 +2,7 @@ import { Accessory } from "../types/Accessory";
 
 export const accessories: Accessory[] = [
   {
-    /* unique */
+    /* unikalne id wymagane przy mapowaniu elementow tablicy w react do komponentow */
     id: 1,
     name: "Wyprofilowany zagłówek",
     price: 149,

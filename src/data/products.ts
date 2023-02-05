@@ -24,14 +24,14 @@ export const products: Product[] = [
     maxLSize: 35,
     colors: [
       {
-        /* unique */
+        /* unikalne id wymagane przy mapowaniu elementow tablicy w react do komponentow */
         id: 1,
         name: "Szary",
         hexColor: "#bbb",
         image: "tat01.jpg",
         /* price 0 means "in standard" */
         price: 0,
-        /* true if color is default, only one should be true */
+        /* true if color is default, only one should be true, currenct selected color */
         isSelected: true,
       },
       {

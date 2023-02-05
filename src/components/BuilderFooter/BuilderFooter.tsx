@@ -36,6 +36,7 @@ export const BuilderFooter = ({
   )?.image;
 
   const handleBuyNow = async () => {
+    // generowanie pdfa wykorzystujac biblioteke reactowa "@react-pdf/renderer"
     const blob = await pdf(
       <PdfDocument selectedProduct={selectedProduct} />
     ).toBlob();
@@ -59,7 +60,8 @@ export const BuilderFooter = ({
           <span className="total">
             <b>
               {selectedProduct
-                ? convertToCurrency(checkPrice(selectedProduct))
+                ? // formatuje cene na podstawie prygotowanego utilsa
+                  convertToCurrency(checkPrice(selectedProduct))
                 : "0 zł"}
             </b>
           </span>

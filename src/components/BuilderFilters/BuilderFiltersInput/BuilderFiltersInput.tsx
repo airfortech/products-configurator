@@ -10,6 +10,7 @@ interface Props {
   setProducts: React.Dispatch<React.SetStateAction<Product[]>>;
 }
 
+// obsluga i stylowanie pojedynczego inputa
 export const BuilderFiltersInput = ({
   name,
   value,
@@ -41,6 +42,7 @@ export const BuilderFiltersInput = ({
         type="text"
         name={name}
         value={val === 0 ? "" : val}
+        // nasluchiwanie na kazda zmiene znaku w danym inpucie
         onChange={handleChange}
         placeholder={placeholder}
         pattern=""

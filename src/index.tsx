@@ -1,6 +1,7 @@
 import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
 import { App } from "./App";
+// importowanie styli css w rootowym pliku index.tsx by były widoczne globalnie dla reszty komponentów
 import "./styles/reset.css";
 import "./styles/index.css";
 import "./styles/animations.css";

@@ -9,8 +9,10 @@ interface Props {
 }
 
 export const BuilderFilters = ({ setProducts }: Props) => {
+  // stan uzywany do stwierdzenia czy filtry maja byc wyswietlone czy nie
   const [isVisible, setIsVisible] = useState(true);
 
+  // funkcja zmieniajaca stan wyswietlania filtrow true/false
   const handleShowFilters = () => {
     setIsVisible(prevState => !prevState);
   };
@@ -19,6 +21,7 @@ export const BuilderFilters = ({ setProducts }: Props) => {
     <div className={"cd-builder-filters"}>
       <div className="header">
         <h2>Dobierz produkt dla Siebie</h2>
+        {/* przypisanie zdarzenia do kliknecia buttona, ktory ukrywa lub pokazuje filtry */}
         <button className="toggle" onClick={handleShowFilters}>
           <img
             className={isVisible ? "" : "up"}

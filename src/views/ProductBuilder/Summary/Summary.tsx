@@ -8,11 +8,14 @@ interface Props
   > {}
 
 export const Summary = ({ selectedProduct }: Props) => {
+  // jesli zaden produkt nie jest wybrany, nic nie renderuje
   if (!selectedProduct) return null;
 
   const { shortName, fullName, description, colors, accessories } =
     selectedProduct;
+  // pobiera nazwe obrazka na podstawie wybranego koloru
   const imageSrc = colors.find(({ isSelected }) => isSelected === true)?.image;
+  // pobiera obiekt wybranego koloru
   const selectedColor = colors.find(
     ({ isSelected }) => isSelected === true
   ) as Color;

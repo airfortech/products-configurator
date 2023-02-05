@@ -10,6 +10,7 @@ import { Products } from "./Products/Products";
 import { Summary } from "./Summary/Summary";
 import { products } from "../../data/products";
 
+// tablica obiektow elementow nawigacji
 const defaultNavItems: NavItem[] = [
   {
     title: "Produkt",
@@ -42,13 +43,18 @@ const defaultNavItems: NavItem[] = [
 ];
 
 export const ProductBuilder = () => {
+  // stan przechowujacy elementu nawigacji wraz z aktualnie wybranym, stan w react mozna modyfikowac uzywajac w tym przypadku setNavItems(), navItems jest zmienna, ktora mozna odczytac by wykorzystac w komponencie
   const [navItems, setNavItems] = useState<NavItem[]>(defaultNavItems);
+  // analogicznie jak wyzej dla przefiltrowanych produktow
   const [filteredProducts, setFilteredProducts] = useState<Product[]>(products);
+  // jak wyzej, dla aktualnie wybranego produktu
   const [selectedProduct, setSelectedProduct] = useState<
     SelectedProduct | undefined
   >(undefined);
+  // jak wyzej, dla aktualnego alertu, domyslnie undefined, czyli nie ma zadnego wyrenderowanego alertu
   const [showAlert, setShowAlert] = useState<string | undefined>(undefined);
 
+  // funkcja zmieniajaca stan aktualnie wybranego elementu nawigacji
   const handleSetActiveNavItem = (titleId: string) => {
     const prevActiveIndex = navItems.findIndex(
       ({ isActive }) => isActive === true
@@ -68,6 +74,7 @@ export const ProductBuilder = () => {
   return (
     <div className="cd-product-builder">
       <BuilderHeader
+        // przekazanie propsow do komponentow
         navItems={navItems}
         selectedProduct={selectedProduct}
         handleSetActiveNavItem={handleSetActiveNavItem}

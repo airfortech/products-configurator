@@ -12,14 +12,20 @@ export const Products = ({
   selectedProduct,
   setSelectedProduct,
 }: Props) => {
+  // funkcja ustawiajaca aktualnie wybrany produkt
   const handleSetSelectedProduct = (id: number) => {
+    // sprawdza czy przekazany id nalezy do wybranego aktualnie produktu
     const isProductSelected = id === selectedProduct?.id;
+    // wyszukuje wybrany produkt w tablicy produktow products i prezypisuje go do product
     const product = products.find(product => id === product.id) as Product;
     setSelectedProduct(
+      // jesli produkt jest aktualnie wybrany, klikniecie powoduje odznaczenie go, czyli zwraca undefined
       isProductSelected
         ? undefined
         : {
+            // kopiuje obiekt w nienaruszonym stanie
             ...product,
+            // wrzuca do wlanie skopiowanego obiektu key accessories i przypisuje mu tablice obiektow accessory, jesli definedAccessories nalezy do id danego produktu
             accessories: product.accessories.map(
               accessory =>
                 definedAccessories.find(
@@ -35,7 +41,8 @@ export const Products = ({
       <header>
         <h1>Wybierz produkt</h1>
       </header>
-      <BuilderFilters setProducts={setProducts} />
+      <BuilderFilters setProducts={setProducts} />{" "}
+      {/* jesli tablica produktow jest pusta, renderuje napis brak produktow... */}
       {products.length <= 0 && (
         <p className="no-results">
           Brak produktów spełniających powyższe kryteria.
