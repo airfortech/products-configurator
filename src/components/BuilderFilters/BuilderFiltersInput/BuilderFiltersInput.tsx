@@ -1,13 +1,14 @@
 import { Product, ProductSize, ProductSizeUnit } from "../../../types/Product";
 import { useState } from "react";
 import { products } from "../../../data/products";
+import { FiltersState } from "../../../types/FiltersState";
 
 interface Props {
   name: ProductSizeUnit;
   value: number;
   placeholder: string;
   unit: string;
-  setProducts: React.Dispatch<React.SetStateAction<Product[]>>;
+  setFiltersState: React.Dispatch<React.SetStateAction<FiltersState>>;
 }
 
 // obsluga i stylowanie pojedynczego inputa
@@ -16,7 +17,7 @@ export const BuilderFiltersInput = ({
   value,
   placeholder,
   unit,
-  setProducts,
+  setFiltersState,
 }: Props) => {
   const [val, setVal] = useState(value);
 
@@ -24,15 +25,10 @@ export const BuilderFiltersInput = ({
     const value = Number(e.currentTarget.value);
     if (isNaN(value)) return;
     setVal(value);
-    setProducts(
-      products.filter(product => {
-        if (value <= 0) return true;
-        return (
-          product[("min" + name) as ProductSize] <= value &&
-          product[("max" + name) as ProductSize] >= value
-        );
-      })
-    );
+    setFiltersState(prevState => ({
+      ...prevState,
+      [name]: value,
+    }));
   };
 
   return (
